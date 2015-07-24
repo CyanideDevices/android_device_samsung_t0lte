@@ -24,6 +24,9 @@
 # GPS
 BOARD_GPS_SET_PRIVACY := true
 
+# LZMA
+WITH_LZMA_OTA := true
+
 # inherit from the proprietary version
 -include vendor/samsung/t0lte/BoardConfigVendor.mk
 
