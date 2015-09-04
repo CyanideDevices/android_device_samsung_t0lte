@@ -31,7 +31,6 @@
 #include "SensorBase.h"
 
 /*****************************************************************************/
-
 static pthread_mutex_t sspEnableLock = PTHREAD_MUTEX_INITIALIZER;
 
 SensorBase::SensorBase(
@@ -174,12 +173,11 @@ int SensorBase::sspWrite(int sensorvalue)
     fd = open(SSP_DEVICE_ENABLE, O_RDWR);
     if (fd >= 0) {
         err = write(fd, buf, sizeof(buf));
-	ret = 0;
+        ret = 0;
     } else {
         ALOGI("%s: error writing to file", __func__);
-	ret = -1;
+        ret = -1;
     }
-    
     close(fd);
     return ret;
 }
