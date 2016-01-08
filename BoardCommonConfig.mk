@@ -29,12 +29,13 @@ COMMON_GLOBAL_CFLAGS += -DCAMERA_WITH_CITYID_PARAM
 TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-ifeq ($(TARGET_VOICE_TECH), cdma)
-TARGET_KERNEL_CONFIG := cyanogenmod_t0ltecdma_defconfig
-else
-TARGET_KERNEL_CONFIG := cyanogenmod_t0lte_defconfig
-endif
+#TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
+#ifeq ($(TARGET_VOICE_TECH), cdma)
+#TARGET_KERNEL_CONFIG := cyanogenmod_t0ltecdma_defconfig
+#else
+#TARGET_KERNEL_CONFIG := cyanogenmod_t0lte_defconfig
+#endif
+TARGET_PREBUILT_KERNEL := device/samsung/t0lte/kernel
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/t0lte/rootdir/fstab.smdk4x12

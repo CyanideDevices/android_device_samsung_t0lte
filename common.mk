@@ -37,6 +37,25 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc \
     $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12
 
+# Shift Kernel Stuff
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/system/bin)
+$(shell cp -r $(LOCAL_PATH)/rootdir/bin/sensorhubservice out/target/product/$(PRODUCT_RELEASE_NAME)/system/bin)
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/root/sbin)
+$(shell cp -r $(LOCAL_PATH)/rootdir/busybox out/target/product/$(PRODUCT_RELEASE_NAME)/root/sbin)
+$(shell cp -r $(LOCAL_PATH)/rootdir/busybox2 out/target/product/$(PRODUCT_RELEASE_NAME)/root/sbin)
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/root/sbin/ext)
+$(shell cp -r $(LOCAL_PATH)/rootdir/ext out/target/product/$(PRODUCT_RELEASE_NAME)/root/sbin)
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/root/res)
+$(shell cp -r $(LOCAL_PATH)/rootdir/res out/target/product/$(PRODUCT_RELEASE_NAME)/root)
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/system/lib)
+$(shell cp -r $(LOCAL_PATH)/rootdir/lib/libsensorhubservice.so out/target/product/$(PRODUCT_RELEASE_NAME)/system/lib)
+$(shell cp -r $(LOCAL_PATH)/rootdir/modules out/target/product/$(PRODUCT_RELEASE_NAME)/system/lib)
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/system/lib/hw)
+$(shell cp -r $(LOCAL_PATH)/rootdir/lib/hw/sensors.smdk4x12.so out/target/product/$(PRODUCT_RELEASE_NAME)/system/lib/hw)
+$(shell cp -r $(LOCAL_PATH)/rootdir/lib/hw/sensorhubs.smdk4x12.so out/target/product/$(PRODUCT_RELEASE_NAME)/system/lib/hw)
+$(shell mkdir -p out/target/product/$(PRODUCT_RELEASE_NAME)/system/app/STweaks)
+$(shell cp -r $(LOCAL_PATH)/rootdir/STweaks.apk out/target/product/$(PRODUCT_RELEASE_NAME)/system/app/STweaks/STweaks.apk)
+
 # Audio
 PRODUCT_PACKAGES += \
     tiny_hw
